@@ -14,7 +14,6 @@ import org.usfirst.frc.team1155.robot.commands.CommandMoveDistance;
 public class DriveTrain extends Subsystem {
 
     //    private RobotDrive driveTrain;
-    private double DEADZONE = .4;
     private ADXRS450_Gyro gyro;
     private Encoder encoder;
 
@@ -31,12 +30,6 @@ public class DriveTrain extends Subsystem {
         RobotMap.MOTOR_RIGHT_MOTOR_BACK.setInverted(true);
         RobotMap.MOTOR_RIGHT_MOTOR_FRONT.setInverted(true);
 
-        encoder = RobotMap.MOTOR_ENCODER_LEFT;
-        encoder.setMaxPeriod(1);
-        encoder.setMinRate(10);
-        encoder.setDistancePerPulse(10);
-        encoder.setSamplesToAverage(10);
-
         this.frontRight = RobotMap.MOTOR_RIGHT_MOTOR_FRONT;
         this.frontLeft = RobotMap.MOTOR_LEFT_MOTOR_FRONT;
         this.backLeft = RobotMap.MOTOR_LEFT_MOTOR_BACK;
@@ -47,10 +40,6 @@ public class DriveTrain extends Subsystem {
 
     @Override
     protected void initDefaultCommand() {
-
-    }
-
-    public void drive() {
 
     }
 
