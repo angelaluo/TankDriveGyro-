@@ -17,8 +17,6 @@ public class DriveSubsystem extends Subsystem {
 	private CANTalon rightback;
 	private Robot robot;
 	private GyroAccelWrapper gyro;
-	private Ultrasonic ultrasonicFront;
-	private Ultrasonic ultrasonicSide;
 
 	public DriveSubsystem(Robot robot, GyroAccelWrapper gyro) {
 		this.gyro = gyro;
@@ -49,20 +47,6 @@ public class DriveSubsystem extends Subsystem {
 		}
 	}
 
-	@Override
-	public void startAuto(Defense defense, boolean isRed, boolean leftGoal) {
-
-	}
-	
-	/**
-	 * Finds the rotations needed for
-	 * the robot to travel a distance in inches
-	 * for a given wheel diameter.
-	 * 
-	 * @param distance The distance to travel in inches.
-	 * @param wheelDiameter The diameter of the wheel in inches.
-	 * @return The number of rotations the wheel must turn.
-	 */
 	public double findWheelRotations(double distance, double wheelDiameter) {
 		return distance/(wheelDiameter * Math.PI);
 	}
@@ -70,17 +54,6 @@ public class DriveSubsystem extends Subsystem {
 	public double findDistanceFromRotation(double rotations, double wheelDiameter) {
 		return rotations * wheelDiameter * Math.PI;
 	}
-
-	/**
-	 * Deadband is the area of where the controller is meant to be at 0, but is
-	 * slightly higher (usually around 1-10)
-	 * 
-	 * @param value
-	 *            Value controller reports
-	 * @param deadband
-	 *            Deadband area
-	 * @return Value compensated for deadband
-	 */
 	private static double calcDeadband(double value, double deadband) {
 		int sign = (value > 0 ? 1 : -1); // checks the sign of the value
 		value *= sign; // changes the value to positive
@@ -101,12 +74,6 @@ public class DriveSubsystem extends Subsystem {
 		rightback.setPosition(0);
 	}
 
-	/**
-	 * Moves the robot forward
-	 * 
-	 * @param polarity
-	 *            Speed at which to move the robot
-	 */
 	public void move(double polarity) {
 		leftback.set(polarity);
 		rightback.set(-polarity);
