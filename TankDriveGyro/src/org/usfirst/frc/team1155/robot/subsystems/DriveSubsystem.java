@@ -14,13 +14,6 @@ import org.usfirst.frc.team1155.robot.commands.CommandMoveDistance;
 public class DriveTrain extends Subsystem {
 
     //    private RobotDrive driveTrain;
-    private JoystickHelper leftStick;
-    private JoystickHelper rightStick;
-
-    private VictorSP frontLeft;
-    private VictorSP frontRight;
-    private VictorSP backLeft;
-    private VictorSP backRight;
     private double DEADZONE = .4;
     private ADXRS450_Gyro gyro;
     private Encoder encoder;
