@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import org.usfirst.frc.team1155.robot.Robot;
 import org.usfirst.frc.team1155.robot.RobotMap;
 
-public class DriveTrain extends Subsystem {
+public class DriveSubsystem extends Subsystem {
 
     //    private RobotDrive driveTrain;
     private ADXRS450_Gyro gyro;
@@ -16,22 +16,12 @@ public class DriveTrain extends Subsystem {
     private double DRIVE_SPEED_R = 0.5;
     private double DRIVE_SPEED_CONSTANT = 1;
 
-    public DriveTrain() {
-        //  this.driveTrain = RobotMap.ROBOT_DRIVE;
-        this.leftStick = RobotMap.JOY_LEFT;
-        this.rightStick = RobotMap.JOY_RIGHT;
-
-        //MOTORS ARE INVERTERED
-        RobotMap.MOTOR_RIGHT_MOTOR_BACK.setInverted(true);
-        RobotMap.MOTOR_RIGHT_MOTOR_FRONT.setInverted(true);
-
-        this.frontRight = RobotMap.MOTOR_RIGHT_MOTOR_FRONT;
-        this.frontLeft = RobotMap.MOTOR_LEFT_MOTOR_FRONT;
-        this.backLeft = RobotMap.MOTOR_LEFT_MOTOR_BACK;
-        this.backRight = RobotMap.MOTOR_RIGHT_MOTOR_BACK;
-
-        this.gyro = Robot.gyro;
-    }
+   public DriveSubsystem() {
+		frontRightTalon = new CANTalon(PortMap.DRIVE_FRONT_RIGHT_TALON);
+		frontLeftTalon = new CANTalon(PortMap.DRIVE_FRONT_LEFT_TALON);
+		backRightTalon = new CANTalon(PortMap.DRIVE_BACK_RIGHT_TALON);
+		backLeftTalon = new CANTalon(PortMap.DRIVE_BACK_LEFT_TALON);
+   }
 
     @Override
     protected void initDefaultCommand() {
