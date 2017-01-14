@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SampleRobot;
 import edu.wpi.first.wpilibj.Timer;
 
-public class GyroSample extends SampleRobot {
+public class GyroDrive extends SampleRobot {
 
  private RobotDrive myRobot; 
  double Kp = 0.03;
