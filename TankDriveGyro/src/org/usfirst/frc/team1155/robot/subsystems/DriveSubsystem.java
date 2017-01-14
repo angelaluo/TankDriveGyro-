@@ -16,10 +16,6 @@ public class DriveSubsystem extends Subsystem {
 		frontLeftTalon = new CANTalon(PortMap.DRIVE_FRONT_LEFT_TALON);
 		backRightTalon = new CANTalon(PortMap.DRIVE_BACK_RIGHT_TALON);
 		backLeftTalon = new CANTalon(PortMap.DRIVE_BACK_LEFT_TALON);
-		frontRightTalon = Hardware.INSTANCE.frontRightTalon;
-		backRightTalon = Hardware.INSTANCE.backRightTalon;
-		frontLeftTalon = Hardware.INSTANCE.frontLeftTalon;
-		backLeftTalon = Hardware.INSTANCE.backLeftTalon;
 
 		backRightTalon.changeControlMode(TalonControlMode.Follower);
 		backRightTalon.set(frontRightTalon.getDeviceID());
