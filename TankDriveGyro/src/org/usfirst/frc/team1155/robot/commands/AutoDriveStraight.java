@@ -11,10 +11,14 @@ public class AutoDriveStraight extends Command {
     private final double Kp = 0.03;
 
     public AutoDriveStraight() {
-        drive = Robot.driveTrain;
-        this.requires(drive);
+       private static Joystick leftJoy, rightJoy;
 
-        gyro = Robot.gyro;
+	private DriveSubsystem drive = Robot.drive;
+
+	public DriveCommand() {
+		requires(Robot.drive);
+		leftJoy = Hardware.INSTANCE.leftJoystick;
+		rightJoy = Hardware.INSTANCE.rightJoystick;
     }
 
     @Override
