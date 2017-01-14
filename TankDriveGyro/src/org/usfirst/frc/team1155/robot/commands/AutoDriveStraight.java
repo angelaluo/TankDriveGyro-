@@ -6,17 +6,13 @@ import org.usfirst.frc.team1155.robot.subsystems.DriveTrain;
 
 public class AutoDriveStraight extends Command {
 
-    private DriveTrain drive;
     private ADXRS450_Gyro gyro;
     private final double Kp = 0.03;
 
+    private static Joystick leftJoy, rightJoy;
+
     public AutoDriveStraight() {
-       private static Joystick leftJoy, rightJoy;
-
-	private DriveSubsystem drive = Robot.drive;
-
-	public DriveCommand() {
-		requires(Robot.drive);
+		requires(Robot.driveSubsystem);
 		leftJoy = Hardware.INSTANCE.leftJoystick;
 		rightJoy = Hardware.INSTANCE.rightJoystick;
     }
@@ -26,10 +22,13 @@ public class AutoDriveStraight extends Command {
 
     @Override
     protected void execute() {
-        double angle = gyro.getAngle(); // get current heading
+    	drive.driveCustom(leftJoy.getY(), rightJoy.getY());
+    	if (gyro.getAngle() != 0){
+    		double angle = gyro.getAngle();
         drive.driveCustom((-angle * (Kp * 0.003)) + (.15), (-angle * (Kp * 0.003)) + (-.15)); // drive towards heading 0
         Timer.delay(0.004);
-        //System.out.println(gyro.getAngle());
+        }
+
     }
 
     @Override
