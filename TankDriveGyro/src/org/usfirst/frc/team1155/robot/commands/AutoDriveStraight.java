@@ -1,8 +1,8 @@
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc.team1369.robot.Robot;
-import org.usfirst.frc.team1369.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team1155.robot.Robot;
+import org.usfirst.frc.team1155.robot.subsystems.DriveTrain;
 
 public class AutoDriveStraight extends Command {
 
