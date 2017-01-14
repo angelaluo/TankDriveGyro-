@@ -6,10 +6,10 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import org.usfirst.frc.team1369.robot.JoystickHelper;
-import org.usfirst.frc.team1369.robot.Robot;
-import org.usfirst.frc.team1369.robot.RobotMap;
-import org.usfirst.frc.team1369.robot.commands.CommandMoveDistance;
+import org.usfirst.frc.team1155.robot.JoystickHelper;
+import org.usfirst.frc.team1155.robot.Robot;
+import org.usfirst.frc.team1155.robot.RobotMap;
+import org.usfirst.frc.team1155.robot.commands.CommandMoveDistance;
 
 public class DriveTrain extends Subsystem {
 
