@@ -3,13 +3,8 @@ package org.usfirst.frc.team1369.robot.subsystems;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.VictorSP;
-import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import org.usfirst.frc.team1155.robot.JoystickHelper;
 import org.usfirst.frc.team1155.robot.Robot;
 import org.usfirst.frc.team1155.robot.RobotMap;
-import org.usfirst.frc.team1155.robot.commands.CommandMoveDistance;
 
 public class DriveTrain extends Subsystem {
 
