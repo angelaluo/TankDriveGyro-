@@ -9,34 +9,18 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class DriveSubsystem extends Subsystem {
 
-	private CANTalon frontRightTalon, backRightTalon, frontLeftTalon, backLeftTalon;
-
-	public DriveSubsystem() {
-		frontRightTalon = new CANTalon(PortMap.DRIVE_FRONT_RIGHT_TALON);
-		frontLeftTalon = new CANTalon(PortMap.DRIVE_FRONT_LEFT_TALON);
-		backRightTalon = new CANTalon(PortMap.DRIVE_BACK_RIGHT_TALON);
-		backLeftTalon = new CANTalon(PortMap.DRIVE_BACK_LEFT_TALON);
-
-		backRightTalon.changeControlMode(TalonControlMode.Follower);
-		backRightTalon.set(frontRightTalon.getDeviceID());
-
-		backLeftTalon.changeControlMode(TalonControlMode.Follower);
-		backLeftTalon.set(frontLeftTalon.getDeviceID());
+	public static Talon rightMotor = new Talon(RobotMap.RightDriveMotor); //Talon Object
+	public static Talon leftMotor = new Talon(RobotMap.LeftDriveMotor);	 //Talon Object
+	public static Talon rightMotor2 = new Talon(RobotMap.RightDriveMotor2); //Talon Object
+	public static Talon leftMotor2 = new Talon(RobotMap.LeftDriveMotor2);	 //Talon Object
+	public static RobotDrive m_drive = new RobotDrive(rightMotor, rightMotor2, leftMotor, leftMotor2); //Robot Drive Class
+	public void initDefaultCommand() {
+		// Set the default command for a subsystem here.
+		// setDefaultCommand(new MySpecialCommand());
+		// RobotDrive.Method; with Method being Stop
 	}
-
-	public void setSpeed(double speedLeft, double speedRight) {
-		frontRightTalon.set(speedRight);
-		frontLeftTalon.set(speedLeft);
-	}
-
-	public void stopMotion() {
-		frontRightTalon.set(0);
-		frontLeftTalon.set(0);
-	}
-
-	@Override
-	protected void initDefaultCommand() {
-		// TODO Auto-generated method stub
-
+	public static void setZero(){
+		rightMotor.set(0);
+		leftMotor.set(0);
 	}
 }
